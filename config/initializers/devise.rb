@@ -312,6 +312,7 @@ Devise.setup do |config|
   # config.sign_in_after_change_password = true
 
   config.omniauth :google_oauth2, ENV["google_id"], ENV["google_secret"], {}
-  config.omniauth :github, ENV['github_id'], ENV['github_secret']
+  config.omniauth :github, ENV['github_id'], ENV['github_secret'], {}
+  config.omniauth :facebook, ENV['facebook_id'], ENV['facebook_secret'], {}
 
 end

@@ -2,7 +2,7 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-    :recoverable, :rememberable, :validatable, :confirmable, :omniauthable, omniauth_providers: [:google_oauth2, :github]
+    :recoverable, :rememberable, :validatable, :confirmable, :omniauthable, omniauth_providers: [:google_oauth2, :github, :facebook]
 
 
   mount_uploader :photo, AvatarUploader
@@ -33,6 +33,8 @@ class User < ApplicationRecord
       icon = "<i class='bi bi-google'> Sign in with Google </i>"
     elsif provider == :github
       icon = "<i class='bi bi-github'> Sign in with GitHub </i>"
+    elsif provider == :facebook
+      icon = "<i class='bi bi-facebook'> Sign in with Facebook </i>"
     end
 
     icon
@@ -44,6 +46,8 @@ class User < ApplicationRecord
       icon = "btn btn-primary"
     elsif provider == :github
       icon = "btn btn-dark"
+    elsif provider == :facebook
+      icon = "btn btn-info"
     end
     
     icon
