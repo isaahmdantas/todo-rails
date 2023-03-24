@@ -113,6 +113,18 @@
     border: 0;
     box-shadow: 0 5px 30px 0 rgba(82, 63, 105, 0.2);
   }
+
+  .dropdown-menu .button_to {
+    font-size: 14px;
+    padding: 10px 15px;
+    transition: 0.3s;
+    cursor: pointer;
+  }
+  .dropdown-menu .button_to button i {
+    margin-right: 10px;
+    font-size: 18px;
+    line-height: 0;
+  }
   
   .dropdown-menu .dropdown-header,
   .dropdown-menu .dropdown-footer {
