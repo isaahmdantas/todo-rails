@@ -23,6 +23,7 @@ class User < ApplicationRecord
     user.update(remote_photo_url: data.try(:[], 'image')) if user.remote_photo_url.nil?
     user.update(provider: access_token['provider']) if user.provider.blank? 
     user.update(uid: access_token['uid']) if user.uid.blank? 
+    user.update(username: data.try(:[], 'nickname')) if user.username.blank?
     
     user
   end
