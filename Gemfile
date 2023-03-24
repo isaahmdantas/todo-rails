@@ -81,6 +81,7 @@ end
 gem 'devise'
 gem "figaro"
 gem 'omniauth-google-oauth2'
+gem 'omniauth-github'
 gem 'omniauth-rails_csrf_protection'
 gem 'carrierwave', '>= 3.0.0.beta', '< 4.0'
 
