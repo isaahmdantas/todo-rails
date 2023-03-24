@@ -36,3 +36,6 @@
 /node_modules
 /public/fonts/*
 !/public/fonts/.keep
+
+# Ignore application configuration
+/config/application.yml

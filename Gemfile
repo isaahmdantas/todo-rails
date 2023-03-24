@@ -79,3 +79,6 @@ group :test do
 end
 
 gem 'devise'
+gem "figaro"
+gem 'omniauth-google-oauth2'
+gem 'omniauth-rails_csrf_protection'

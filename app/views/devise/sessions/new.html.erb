@@ -3,6 +3,9 @@
   <p class="text-center small">Enter your e-mail & password to login</p>
 </div>
 
+
+<%= render "devise/shared/links_provider" %>
+
 <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: 'row g-3 needs-validation'}) do |f| %>
   <div class="col-12">
     <%= f.label :email, class: "form-label"  %>
