@@ -36,5 +36,5 @@ bin/dev
 4. docker compose run --rm app rake seed:migrate
 
 ## Executar o Docker
-1. docker compose run --rm -p 3000:3000 app todo s -b 0.0.0.0
+1. docker compose run --rm -p 3000:3000 todo s -b 0.0.0.0
 
