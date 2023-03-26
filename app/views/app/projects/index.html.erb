@@ -1,0 +1,49 @@
+<%= content_for :breadcrumb do %>
+  <li class="breadcrumb-item">Projects</li>
+  <li class="breadcrumb-item active">List</li>
+<% end %>
+
+<div class="row">
+  <div class="col-12">
+    <div class="card info-card dashboard">
+      <div class="filter filter-custom">
+        <a href="<%= new_app_project_path %>" class="btn btn-sm btn-success"><i class="bi bi-plus"></i> New Project</a>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Projects</h5>
+        <table class="table table-sm">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Name</th>
+              <th scope="col">Color</th>
+              <th scope="col">Favorite</th>
+              <th scope="col">View</th>
+              <th scope="col">Options</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @projects.each_with_index do |project, index| %>
+              <tr>
+                <td><%= index + 1 %></td>
+                <td><%= project.try(:name) %></td>
+                <td><span class="badge rounded-pill bg-primary" style="background-color: <%= project.try(:color) %> !important;"><%= project.try(:color) %></span></td>
+                <td><%= project.try(:favorite) %></td>
+                <td><%= project.try(:view) %></th>
+                <td>
+                  <%= link_to app_project_path(project), class: 'btn btn-sm btn-info' do %>
+                    <i class="bi bi-search"></i>
+                  <% end %>
+                  <%= link_to edit_app_project_path(project), class: 'btn btn-sm btn-warning' do %>
+                    <i class="bi bi-pencil-square"></i>
+                  <% end %>
+                  <%= button_to "<i class='bi bi-trash'></i>".html_safe, [:app, project], method: :delete, class: "btn btn-sm btn-danger" %>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

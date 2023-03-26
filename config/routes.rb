@@ -1,8 +1,15 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
   root 'app#index'
+
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
+
+  concern :rotable do
+    resources :projects 
+  end
+
+  namespace :app do
+    concerns :rotable
+  end
+
 end
+

@@ -9,6 +9,14 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
+td form.button_to {
+  all: unset;
+}
+
+div form.button_to {
+  all: unset;
+}
+
 :root {
     scroll-behavior: smooth;
   }
@@ -777,6 +785,10 @@
     position: absolute;
     right: 0px;
     top: 15px;
+  }
+
+  .dashboard .filter-custom {
+    right: 15px;
   }
   
   .dashboard .filter .icon {

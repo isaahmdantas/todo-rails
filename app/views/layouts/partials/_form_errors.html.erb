@@ -1,0 +1,12 @@
+<% errors ||= errors %>
+
+<% if errors.any? %>
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <h2><%= pluralize(errors.count, "error") %> prohibited this project from being saved:</h2>
+        <ul>
+            <% errors.each do |error| %>
+                <li><%= error.full_message %></li>
+            <% end %>
+        </ul>
+    </div>
+<% end %>

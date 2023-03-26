@@ -1,0 +1,35 @@
+<div id="<%= dom_id project %>">
+  <p>
+    <strong>Name:</strong>
+    <%= project.name %>
+  </p>
+
+  <p>
+    <strong>Color:</strong>
+    <%= project.color %>
+  </p>
+
+  <p>
+    <strong>Favorite:</strong>
+    <%= project.favorite %>
+  </p>
+
+  <p>
+    <strong>View:</strong>
+    <%= project.view %>
+  </p>
+
+  <p>
+    <strong>User:</strong>
+    <%= project.try(:user).try(:name) %>
+  </p>
+
+</div>
+
+
+<div class="text-center">
+  <%= link_to "Edit this project", edit_app_project_path(@project), class: "btn btn-sm btn-warning" %> 
+  <%= link_to "Back to projects", app_projects_path, class: "btn btn-sm btn-secondary" %>
+
+  <%= button_to "Destroy this project", [:app, @project], method: :delete, class: "btn btn-sm btn-danger" %>
+</div>

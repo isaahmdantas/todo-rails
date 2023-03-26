@@ -6,7 +6,7 @@ import * as bootstrap from "bootstrap"
 import Chart from 'chart.js/auto'
 import * as echarts from 'echarts'
 import * as quill from 'quill'
-import * as DataTable from 'simple-datatables'
+import * as simpleDatatables from 'simple-datatables'
 import * as tinymce from 'tinymce'
 import "./php-email-form"
 import "./main"
@@ -17,6 +17,6 @@ window.bootstrap = bootstrap;
 window.Chart = Chart;
 window.echarts = echarts; 
 window.quill = quill; 
-window.DataTable = DataTable; 
+window.simpleDatatables = simpleDatatables; 
 window.tinymce = tinymce;
 
