@@ -1,0 +1,68 @@
+<%= form_with(model: [:app, user], html: {class: 'row g-3'}) do |form| %>
+  <%= render partial: "layouts/partials/form_errors", locals: {errors: user.errors} %>
+  
+  <div class="row mb-3">
+    <%= form.label :name, class: "col-md-4 col-lg-3 col-form-label" %>
+    <div class="col-md-8 col-lg-9">
+      <%= form.text_field :name, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <%= form.label :username, class: "col-md-4 col-lg-3 col-form-label" %>
+    <div class="col-md-8 col-lg-9">
+      <%= form.text_field :username, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <%= form.label :email, class: "col-md-4 col-lg-3 col-form-label" %>
+    <div class="col-md-8 col-lg-9">
+      <%= form.text_field :email, class: "form-control", readonly: user.provider.present? %>
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <%= form.label :photo, class: "col-md-4 col-lg-3 col-form-label" %>
+    <div class="col-md-8 col-lg-9">
+      <%= form.file_field :photo, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <%= form.label :phone, class: "col-md-4 col-lg-3 col-form-label" %>
+    <div class="col-md-8 col-lg-9">
+      <%= form.text_field :phone, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <%= form.label :address, class: "col-md-4 col-lg-3 col-form-label" %>
+    <div class="col-md-8 col-lg-9">
+      <%= form.text_field :address, class: "form-control" %>
+    </div>
+  </div>
+
+  <%= form.fields_for :socials do |social_fields| %>
+    <%= social_fields.hidden_field :name %>
+    <%= social_fields.hidden_field :icon %>
+    <div class="row mb-3">
+      <%= social_fields.label :url, social_fields.object.name, class: "col-md-4 col-lg-3 col-form-label" %>
+      <div class="col-md-8 col-lg-9">
+        <%= social_fields.text_field :url, class: "form-control" %>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="row mb-3">
+    <%= form.label :about, class: "col-md-4 col-lg-3 col-form-label" %>
+    <div class="col-md-8 col-lg-9">
+      <%= form.text_area :about, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="text-center">
+    <%= form.submit nil, class: 'btn btn-primary' %>
+  </div>
+<% end %>
+

@@ -1,0 +1,66 @@
+<section class="section profile">
+    <div class="row">
+        <div class="col-xl-4">
+            <div class="card">
+                <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
+                    <%= image_tag @user.photo.url, class: 'rounded-circle', alt: 'Profile' %>
+                    <h2><%= @user.name %></h2>
+                    <h3><%= @user.username %></h3>
+                    <% if @user.socials.any? %>
+                        <div class="social-links mt-2">
+                            <% @user.socials.each do |social| %>
+                                <a href="<%= social.url %>" target="_blank" class="<%= social.url %>" title="<%= social.name %>"><i class="bi bi-<%= social.icon %>"></i></a>
+                            <% end %>
+                        </div>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-8">
+            <div class="card">
+                <div class="card-body pt-3">
+                    <!-- Bordered Tabs -->
+                    <ul class="nav nav-tabs nav-tabs-bordered">
+
+                        <li class="nav-item">
+                            <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#profile-overview">Overview</button>
+                        </li>
+
+                        <li class="nav-item">
+                            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-edit">Edit Profile</button>
+                        </li>
+
+                        <li class="nav-item">
+                            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-settings">Settings</button>
+                        </li>
+
+                        <li class="nav-item">
+                            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-change-password">Change Password</button>
+                        </li>
+
+                    </ul>
+                    <div class="tab-content pt-2">
+
+                        <div class="tab-pane fade show active profile-overview" id="profile-overview">
+                          <%= render partial: "app/users/profile_overview", locals: {user: @user} %>
+                        </div>
+
+                        <div class="tab-pane fade profile-edit pt-3" id="profile-edit">
+                            <%= render partial: "app/users/form", locals: {user: @user} %>
+                        </div>
+
+                        <div class="tab-pane fade pt-3" id="profile-settings">
+                        </div>
+
+                        <div class="tab-pane fade profile-edit pt-3" id="profile-change-password">
+                            <%= render partial: "app/users/form_password", locals: {user: @user} %>
+                        </div>
+
+                    </div><!-- End Bordered Tabs -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

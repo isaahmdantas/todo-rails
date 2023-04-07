@@ -1,0 +1,15 @@
+<%= content_for :breadcrumb do %>
+  <li class="breadcrumb-item">Users</li>
+  <li class="breadcrumb-item active">Show</li>
+<% end %>
+
+<div class="row">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Show user</h5>
+        <%= render @user %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -14,3 +14,7 @@
     --bs-btn-disabled-bg: #d34231;
     --bs-btn-disabled-border-color: #d34231;
 }
+
+input[readonly] {
+    background-color: #eee; /* Cor de fundo para inputs readonly */
+}

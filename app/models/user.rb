@@ -7,6 +7,8 @@ class User < ApplicationRecord
 
   mount_uploader :photo, AvatarUploader
 
+  has_many :socials, class_name: "Social", dependent: :destroy
+  accepts_nested_attributes_for :socials
 
   def self.from_omniauth(access_token)
     data = access_token.info
@@ -53,6 +55,8 @@ class User < ApplicationRecord
     
     icon
   end
+
+  
 
   private
     def self.current=(user)

@@ -37,7 +37,6 @@ module App
 
     # PATCH/PUT /projects/1 or /projects/1.json
     def update
-      debugger
       respond_to do |format|
         if @project.update(project_params)
           format.html { redirect_to app_project_url(@project), notice: "Project was successfully updated." }
