@@ -1,0 +1,15 @@
+<%= content_for :breadcrumb do %>
+  <li class="breadcrumb-item">Tags</li>
+  <li class="breadcrumb-item active">Edit</li>
+<% end %>
+
+<div class="row">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Editing tag</h5>
+        <%= render "form", tag: @tag %>
+      </div>
+    </div>
+  </div>
+</div>

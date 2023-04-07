@@ -1,29 +1,29 @@
 require 'rails_helper'
 
-RSpec.describe "socials/index", type: :view do
+RSpec.describe "tags/index", type: :view do
   before(:each) do
-    assign(:socials, [
-      Social.create!(
+    assign(:tags, [
+      Tag.create!(
         name: "Name",
-        url: "Url",
-        icon: "Icon",
+        color: "Color",
+        favorite: false,
         user: nil
       ),
-      Social.create!(
+      Tag.create!(
         name: "Name",
-        url: "Url",
-        icon: "Icon",
+        color: "Color",
+        favorite: false,
         user: nil
       )
     ])
   end
 
-  it "renders a list of socials" do
+  it "renders a list of tags" do
     render
     cell_selector = Rails::VERSION::STRING >= '7' ? 'div>p' : 'tr>td'
     assert_select cell_selector, text: Regexp.new("Name".to_s), count: 2
-    assert_select cell_selector, text: Regexp.new("Url".to_s), count: 2
-    assert_select cell_selector, text: Regexp.new("Icon".to_s), count: 2
+    assert_select cell_selector, text: Regexp.new("Color".to_s), count: 2
+    assert_select cell_selector, text: Regexp.new(false.to_s), count: 2
     assert_select cell_selector, text: Regexp.new(nil.to_s), count: 2
   end
 end

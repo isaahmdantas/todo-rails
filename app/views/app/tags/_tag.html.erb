@@ -1,0 +1,23 @@
+<div id="<%= dom_id tag %>">
+  <p>
+    <strong>Name:</strong>
+    <%= tag.name %>
+  </p>
+
+  <p>
+    <strong>Color:</strong>
+    <%= tag.color %>
+  </p>
+
+  <p>
+    <strong>Favorite:</strong>
+    <%= tag.favorite %>
+  </p>
+</div>
+
+<div class="text-center">
+  <%= link_to "Edit this tag", edit_app_tag_path(@tag), class: "btn btn-sm btn-warning" %> 
+  <%= link_to "Back to tags", app_tags_path, class: "btn btn-sm btn-secondary" %>
+
+  <%= button_to "Destroy this tag", [:app, @tag], method: :delete, class: "btn btn-sm btn-danger" %>
+</div>

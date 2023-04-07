@@ -1,8 +1,8 @@
 FactoryBot.define do
-  factory :social do
+  factory :tag do
     name { "MyString" }
-    url { "MyString" }
-    icon { "MyString" }
+    color { "MyString" }
+    favorite { false }
     user { nil }
   end
 end
