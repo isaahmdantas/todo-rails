@@ -23,7 +23,7 @@ $ npm install
 ```bash
 rails db:create 
 rails db:migrate 
-rails db:seed:migrte 
+rake seed:migrate
 
 bin/dev
 ```
